@@ -128,7 +128,7 @@ ggplot(mtcars, aes(x = factor(cyl))) +
 ![](lab1_2_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
 
 4. Now `knit` the file to html using the knit button at the top of the page.  
-5. Lastly, commit and push this file to your GitHub repository.  
+5. Lastly, commit and push this file to your GitHub repository.  ok
 
 ## Wrap-up
 Please review the learning goals and be sure to use the code here as a reference when completing the homework.  
