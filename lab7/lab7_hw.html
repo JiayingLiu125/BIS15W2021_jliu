@@ -765,7 +765,7 @@ Oliveira BF, São-Pedro VA, Santos-Barrera G, Penone C, Costa GC (2017). “Amph
 ## 4 Ter        1104     16.3</code></pre>
 <p>The NA’s mean that the labeled species are not fossorial/ terrestrial/ aquatic/ arboreal. It is basically marking yes/ no instead of representing missing values.</p>
 <p><strong>10. Now that we know how NA’s are represented in the <code>amniota</code> data, how would you load the data such that the values which represent NA’s are automatically converted?</strong></p>
-<pre class="r"><code>amniota &lt;- readr::read_csv(&quot;data/amniota.csv&quot;, na = c(&quot;NA&quot;, &quot;&quot;, &quot;.&quot;, &quot;-999&quot;))</code></pre>
+<pre class="r"><code>amniota &lt;- readr::read_csv(&quot;data/amniota.csv&quot;, na = c(&quot;-30258.711&quot;, &quot;-999&quot;))</code></pre>
 <pre><code>## 
 ## ── Column specification ────────────────────────────────────────────────────────
 ## cols(

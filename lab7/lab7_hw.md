@@ -491,7 +491,7 @@ The NA's mean that the labeled species are not fossorial/ terrestrial/ aquatic/ 
 **10. Now that we know how NA's are represented in the `amniota` data, how would you load the data such that the values which represent NA's are automatically converted?**
 
 ```r
-amniota <- readr::read_csv("data/amniota.csv", na = c("NA", "", ".", "-999"))
+amniota <- readr::read_csv("data/amniota.csv", na = c("-30258.711", "-999"))
 ```
 
 ```
