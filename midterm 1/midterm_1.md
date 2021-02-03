@@ -1,7 +1,7 @@
 ---
 title: "Midterm 1"
 author: "Jiaying Liu"
-date: "2021-01-26"
+date: "2021-02-02"
 output:
   html_document: 
     theme: spacelab
@@ -43,7 +43,7 @@ elephants <- readr::read_csv("data/ElephantsMF.csv")
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   Age = col_double(),
 ##   Height = col_double(),
@@ -56,7 +56,7 @@ str(elephants)
 ```
 
 ```
-## tibble [288 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+## tibble [288 x 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ Age   : num [1:288] 1.4 17.5 12.8 11.2 12.7 ...
 ##  $ Height: num [1:288] 120 227 235 210 220 ...
 ##  $ Sex   : chr [1:288] "M" "M" "M" "M" ...
@@ -89,7 +89,7 @@ elephants %>%
 ```
 ## # A tibble: 2 x 2
 ##   `sex == "M"`     n
-##   <lgl>        <int>
+## * <lgl>        <int>
 ## 1 FALSE          150
 ## 2 TRUE           138
 ```
@@ -115,13 +115,9 @@ elephants %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 2 x 3
 ##   sex   age_avg height_avg
-##   <fct>   <dbl>      <dbl>
+## * <fct>   <dbl>      <dbl>
 ## 1 F       12.8        190.
 ## 2 M        8.95       185.
 ```
@@ -133,10 +129,6 @@ elephants %>%
   group_by(sex) %>%
   filter(age > 25) %>%
   summarise(avg_height = mean(height), min_height = min(height), max_height = max(height), n = n())
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -160,13 +152,13 @@ defaunation <- readr::read_csv("data/IvindoData_DryadVersion.csv")
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_double(),
 ##   HuntCat = col_character(),
 ##   LandUse = col_character()
 ## )
-## ℹ Use `spec()` for the full column specifications.
+## i Use `spec()` for the full column specifications.
 ```
 
 ```r
@@ -178,7 +170,7 @@ str(defaunation)
 ```
 
 ```
-## tibble [24 × 26] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+## tibble [24 x 26] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ TransectID             : num [1:24] 1 2 2 3 4 5 6 7 8 9 ...
 ##  $ Distance               : num [1:24] 7.14 17.31 18.32 20.85 15.95 ...
 ##  $ HuntCat                : chr [1:24] "Moderate" "None" "None" "None" ...
@@ -252,10 +244,6 @@ defaunation %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 2 x 3
 ##   HuntCat  birds_div_avg mammals_div_avg
 ##   <fct>            <dbl>           <dbl>
@@ -273,7 +261,7 @@ defaunation %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'Distance > 20' (override with `.groups` argument)
+## `summarise()` has grouped output by 'Distance > 20'. You can override using the `.groups` argument.
 ```
 
 ```
@@ -283,7 +271,7 @@ defaunation %>%
 ##   <lgl>           <lgl>            <dbl>    <dbl>       <dbl>      <dbl>
 ## 1 FALSE           TRUE              0.08     70.4      0.0967       24.1
 ## 2 TRUE            FALSE             7.21     44.5      0.557        40.1
-## # … with 2 more variables: RA_Rodent <dbl>, RA_Ungulate <dbl>
+## # ... with 2 more variables: RA_Rodent <dbl>, RA_Ungulate <dbl>
 ```
 The relative abundance of apes, elephants, monkeys and ungulates drops off the closer you get to a villge; while the relative abundance of birds and elephants rises the closer you get to a village.
 
@@ -297,13 +285,9 @@ defaunation %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 3 x 7
 ##   LandUse RA_Apes RA_Birds RA_Elephant RA_Monkeys RA_Rodent RA_Ungulate
-##   <fct>     <dbl>    <dbl>       <dbl>      <dbl>     <dbl>       <dbl>
+## * <fct>     <dbl>    <dbl>       <dbl>      <dbl>     <dbl>       <dbl>
 ## 1 Logging    2.10     62.7       0.425       28.4      3.22        3.10
 ## 2 Neither    1.05     71.0       0.815       22.1      4.18        0.81
 ## 3 Park       2.50     44.0       0.614       42.0      2.87        8.06
