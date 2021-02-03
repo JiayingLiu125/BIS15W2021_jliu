@@ -1,7 +1,7 @@
 ---
 title: "Lab 7 Homework"
 author: "Jiaying Liu"
-date: "2021-02-02"
+date: "2021-02-03"
 output:
   html_document: 
     theme: spacelab
@@ -52,7 +52,7 @@ amniota <- readr::read_csv("data/amniota.csv")
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_double(),
 ##   class = col_character(),
@@ -62,7 +62,7 @@ amniota <- readr::read_csv("data/amniota.csv")
 ##   species = col_character(),
 ##   common_name = col_character()
 ## )
-## ℹ Use `spec()` for the full column specifications.
+## i Use `spec()` for the full column specifications.
 ```
 
 `amphibio` data:  
@@ -76,7 +76,7 @@ amphibio <- readr::read_csv("data/amphibio.csv")
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_double(),
 ##   id = col_character(),
@@ -87,7 +87,7 @@ amphibio <- readr::read_csv("data/amphibio.csv")
 ##   Seeds = col_logical(),
 ##   OBS = col_logical()
 ## )
-## ℹ Use `spec()` for the full column specifications.
+## i Use `spec()` for the full column specifications.
 ```
 
 ```
@@ -198,10 +198,10 @@ amniota %>%
 
 ```
 ## # A tibble: 1 x 36
-##   class order family genus species subspecies common_name female_maturity…
+##   class order family genus species subspecies common_name female_maturity~
 ##   <int> <int>  <int> <int>   <int>      <int>       <int>            <int>
 ## 1     0     0      0     0       0          0           0                0
-## # … with 28 more variables: litter_or_clutch_size_n <int>,
+## # ... with 28 more variables: litter_or_clutch_size_n <int>,
 ## #   litters_or_clutches_per_y <int>, adult_body_mass_g <int>,
 ## #   maximum_longevity_y <int>, gestation_d <int>, weaning_d <int>,
 ## #   birth_or_hatching_weight_g <int>, weaning_weight_g <int>, egg_mass_g <int>,
@@ -316,12 +316,13 @@ amphibio %>%
 ##      id Order Family Genus Species   Fos   Ter   Aqu   Arb Leaves Flowers Seeds
 ##   <int> <int>  <int> <int>   <int> <int> <int> <int> <int>  <int>   <int> <int>
 ## 1     0     0      0     0       0  6053  1104  2810  4347   6752    6772  6772
-## # … with 26 more variables: Fruits <int>, Arthro <int>, Vert <int>, Diu <int>,
-## #   Noc <int>, Crepu <int>, Wet_warm <int>, Wet_cold <int>, Dry_warm <int>,
-## #   Dry_cold <int>, Body_mass_g <int>, Age_at_maturity_min_y <int>,
-## #   Age_at_maturity_max_y <int>, Body_size_mm <int>,
-## #   Size_at_maturity_min_mm <int>, Size_at_maturity_max_mm <int>,
-## #   Longevity_max_y <int>, Litter_size_min_n <int>, Litter_size_max_n <int>,
+## # ... with 26 more variables: Fruits <int>, Arthro <int>, Vert <int>,
+## #   Diu <int>, Noc <int>, Crepu <int>, Wet_warm <int>, Wet_cold <int>,
+## #   Dry_warm <int>, Dry_cold <int>, Body_mass_g <int>,
+## #   Age_at_maturity_min_y <int>, Age_at_maturity_max_y <int>,
+## #   Body_size_mm <int>, Size_at_maturity_min_mm <int>,
+## #   Size_at_maturity_max_mm <int>, Longevity_max_y <int>,
+## #   Litter_size_min_n <int>, Litter_size_max_n <int>,
 ## #   Reproductive_output_y <int>, Offspring_size_min_mm <int>,
 ## #   Offspring_size_max_mm <int>, Dir <int>, Lar <int>, Viv <int>, OBS <int>
 ```
@@ -396,7 +397,7 @@ naniar::miss_var_summary(amniota_tidy)
 ##  8 egg_length_mm                   20702     97.1
 ##  9 weaning_weight_g                20258     95.0
 ## 10 female_svl_cm                   20242     94.9
-## # … with 26 more rows
+## # ... with 26 more rows
 ```
 
 **7. Use the package `naniar` to produce a summary, including percentages, of missing data in each column for the `amphibio` data.**
@@ -419,7 +420,7 @@ naniar::miss_var_summary(amphibio)
 ##  8 Wet_cold   6625     97.8
 ##  9 Crepu      6608     97.5
 ## 10 Dry_warm   6572     97.0
-## # … with 28 more rows
+## # ... with 28 more rows
 ```
 
 **8. For the `amniota` data, calculate the number of NAs in the `egg_mass_g` column sorted by taxonomic class; i.e. how many NA's are present in the `egg_mass_g` column in birds, mammals, and reptiles? Does this results make sense biologically? How do these results affect your interpretation of NA's?**  
@@ -496,7 +497,7 @@ amniota <- readr::read_csv("data/amniota.csv", na = c("-30258.711", "-999"))
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_double(),
 ##   class = col_character(),
@@ -516,7 +517,7 @@ amniota <- readr::read_csv("data/amniota.csv", na = c("-30258.711", "-999"))
 ##   female_body_mass_at_maturity_g = col_logical(),
 ##   no_sex_svl_cm = col_logical()
 ## )
-## ℹ Use `spec()` for the full column specifications.
+## i Use `spec()` for the full column specifications.
 ```
 
 ```
