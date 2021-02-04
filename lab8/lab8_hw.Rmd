@@ -85,7 +85,7 @@ sydneybeaches_wide %>%
 6. We haven't dealt much with dates yet, but separate the date into columns day, month, and year. Do this on the `sydneybeaches_long` data.
 ```{r}
 sydneybeaches_long <- sydneybeaches_long %>%
-  separate(date, into = c("month", "day", "year"), sep = "/")
+  separate(date, into = c("day", "month", "year"), sep = "/")
 sydneybeaches_long
 ```
 
@@ -110,9 +110,16 @@ avg_enterococci %>%
   filter(year == 2018) %>%
   arrange(desc(avg_enterococci_cfu_100ml))
 ```
-South Marouba Rockpool was the most polluted beach in 2018.
+The most polluted beach in 2018 was South Marouba Rockpool.
 
 10. Perform one analysis of your choice on the data.
+What was the least polluted beach in 2015?
+```{r}
+avg_enterococci %>%
+  filter(year == 2015) %>%
+  arrange(avg_enterococci_cfu_100ml)
+```
+The least polluted beach in 2015 was South Maroubra Beach.
 
 ## Push your final code to GitHub!
 Please be sure that you check the `keep md` file in the knit preferences.   

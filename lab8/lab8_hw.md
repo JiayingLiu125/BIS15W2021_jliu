@@ -255,13 +255,13 @@ sydneybeaches_wide %>%
 
 ```r
 sydneybeaches_long <- sydneybeaches_long %>%
-  separate(date, into = c("month", "day", "year"), sep = "/")
+  separate(date, into = c("day", "month", "year"), sep = "/")
 sydneybeaches_long
 ```
 
 ```
 ## # A tibble: 3,690 x 5
-##    site           month day   year  enterococci_cfu_100ml
+##    site           day   month year  enterococci_cfu_100ml
 ##    <chr>          <chr> <chr> <chr>                 <dbl>
 ##  1 Clovelly Beach 02    01    2013                     19
 ##  2 Clovelly Beach 06    01    2013                      3
@@ -360,9 +360,35 @@ avg_enterococci %>%
 ## 10 2018  Clovelly Beach                              10.6 
 ## 11 2018  Maroubra Beach                               9.21
 ```
-South Marouba Rockpool was the most polluted beach in 2018.
+The most polluted beach in 2018 was South Marouba Rockpool.
 
 10. Perform one analysis of your choice on the data.
+What was the least polluted beach in 2015?
+
+```r
+avg_enterococci %>%
+  filter(year == 2015) %>%
+  arrange(avg_enterococci_cfu_100ml)
+```
+
+```
+## # A tibble: 11 x 3
+## # Groups:   year [1]
+##    year  site                    avg_enterococci_cfu_100ml
+##    <chr> <chr>                                       <dbl>
+##  1 2015  South Maroubra Beach                         8.25
+##  2 2015  Clovelly Beach                               8.82
+##  3 2015  Bondi Beach                                 14.3 
+##  4 2015  Maroubra Beach                              14.5 
+##  5 2015  Bronte Beach                                23.6 
+##  6 2015  Little Bay Beach                            25.5 
+##  7 2015  Gordons Bay (East)                          36.2 
+##  8 2015  Coogee Beach                                40.3 
+##  9 2015  South Maroubra Rockpool                     47.3 
+## 10 2015  Tamarama Beach                              57.0 
+## 11 2015  Malabar Beach                               66.9
+```
+The least polluted beach in 2015 was South Maroubra Beach.
 
 ## Push your final code to GitHub!
 Please be sure that you check the `keep md` file in the knit preferences.   
