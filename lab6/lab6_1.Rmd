@@ -2,10 +2,11 @@
 title: "`summarize()`, `tabyl()`, and `group_by()`"
 date: "`r Sys.Date()`"
 output:
-  html_document:
+  html_document: 
     theme: spacelab
     toc: yes
     toc_float: yes
+    keep_md: yes
   pdf_document:
     toc: yes
 ---
@@ -31,7 +32,7 @@ library("janitor")
 
 ## Install `skimr`
 ```{r}
-#install.packages("skimr")
+install.packages("skimr")
 library("skimr")
 ```
 
@@ -44,7 +45,7 @@ names(msleep)
 
 We will also use the awesome [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/articles/intro.html) data in the second part of lab so let's install it now.
 ```{r}
-#remotes::install_github("allisonhorst/palmerpenguins")
+remotes::install_github("allisonhorst/palmerpenguins")
 ```
 
 ## dplyr Practice
