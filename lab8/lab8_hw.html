@@ -11,7 +11,7 @@
 
 <meta name="author" content="Jiaying Liu" />
 
-<meta name="date" content="2021-02-09" />
+<meta name="date" content="2021-02-10" />
 
 <title>Lab 8 Homework</title>
 
@@ -191,7 +191,7 @@ summary {
 
 <h1 class="title toc-ignore">Lab 8 Homework</h1>
 <h4 class="author">Jiaying Liu</h4>
-<h4 class="date">2021-02-09</h4>
+<h4 class="date">2021-02-10</h4>
 
 </div>
 
@@ -286,15 +286,10 @@ library(janitor)</code></pre>
 ##   Date = col_character(),
 ##   `Enterococci (cfu/100ml)` = col_double()
 ## )</code></pre>
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
-</style>
-<div class="blue">
 <ol start="2" style="list-style-type: decimal">
 <li>Are these data “tidy” per the definitions of the tidyverse? How do you know? Are they in wide or long format?</li>
 </ol>
 <p>These data are not tidy. The variables within the “date” column are not held in their own columns and the values do not have their own cells. Specifically, the variables day, month and year are all represented in the same cells. They are in long format.</p>
-</div>
 <ol start="3" style="list-style-type: decimal">
 <li>We are only interested in the variables site, date, and enterococci_cfu_100ml. Make a new object focused on these variables only. Name the object <code>sydneybeaches_long</code></li>
 </ol>
