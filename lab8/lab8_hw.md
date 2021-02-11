@@ -1,7 +1,7 @@
 ---
 title: "Lab 8 Homework"
 author: "Jiaying Liu"
-date: "2021-02-04"
+date: "2021-02-10"
 output:
   html_document: 
     theme: spacelab
@@ -42,7 +42,7 @@ sydneybeaches <- readr::read_csv("data/sydneybeaches.csv")
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   BeachId = col_double(),
 ##   Region = col_character(),
@@ -60,7 +60,7 @@ str(sydneybeaches)
 ```
 
 ```
-## tibble [3,690 × 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+## tibble [3,690 x 8] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ BeachId                : num [1:3690] 25 25 25 25 25 25 25 25 25 25 ...
 ##  $ Region                 : chr [1:3690] "Sydney City Ocean Beaches" "Sydney City Ocean Beaches" "Sydney City Ocean Beaches" "Sydney City Ocean Beaches" ...
 ##  $ Council                : chr [1:3690] "Randwick Council" "Randwick Council" "Randwick Council" "Randwick Council" ...
@@ -112,7 +112,7 @@ library(here)
 ```
 
 ```
-## here() starts at /Users/linda/Desktop/BIS15W2021_jliu
+## here() starts at D:/TA files/Winter2021 BIS15L/students_rep/BIS15W2021_jliu
 ```
 
 The quotes show the folder structure from the root directory.
@@ -123,7 +123,7 @@ sydneybeaches <-read_csv(here("lab8", "data", "sydneybeaches.csv")) %>% janitor:
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   BeachId = col_double(),
 ##   Region = col_character(),
@@ -136,9 +136,12 @@ sydneybeaches <-read_csv(here("lab8", "data", "sydneybeaches.csv")) %>% janitor:
 ## )
 ```
 
+
 2. Are these data "tidy" per the definitions of the tidyverse? How do you know? Are they in wide or long format?
 
 These data are not tidy. The variables within the "date" column are not held in their own columns and the values do not have their own cells. Specifically, the variables day, month and year are all represented in the same cells. They are in long format.
+
+
 
 3. We are only interested in the variables site, date, and enterococci_cfu_100ml. Make a new object focused on these variables only. Name the object `sydneybeaches_long`
 
@@ -162,7 +165,7 @@ sydneybeaches_long
 ##  8 Clovelly Beach 23/02/2013                    97
 ##  9 Clovelly Beach 07/03/2013                     3
 ## 10 Clovelly Beach 25/03/2013                     0
-## # … with 3,680 more rows
+## # ... with 3,680 more rows
 ```
 
 4. Pivot the data such that the dates are column names and each beach only appears once. Name the object `sydneybeaches_wide`
@@ -178,18 +181,18 @@ sydneybeaches_wide
 ## # A tibble: 11 x 345
 ##    site  `02/01/2013` `06/01/2013` `12/01/2013` `18/01/2013` `30/01/2013`
 ##    <chr>        <dbl>        <dbl>        <dbl>        <dbl>        <dbl>
-##  1 Clov…           19            3            2           13            8
-##  2 Coog…           15            4           17           18           22
-##  3 Gord…           NA           NA           NA           NA           NA
-##  4 Litt…            9            3           72            1           44
-##  5 Mala…            2            4          390           15           13
-##  6 Maro…            1            1           20            2           11
-##  7 Sout…            1            0           33            2           13
-##  8 Sout…           12            2          110           13          100
-##  9 Bond…            3            1            2            1            6
-## 10 Bron…            4            2           38            3           25
-## 11 Tama…            1            0            7           22           23
-## # … with 339 more variables: `05/02/2013` <dbl>, `11/02/2013` <dbl>,
+##  1 Clov~           19            3            2           13            8
+##  2 Coog~           15            4           17           18           22
+##  3 Gord~           NA           NA           NA           NA           NA
+##  4 Litt~            9            3           72            1           44
+##  5 Mala~            2            4          390           15           13
+##  6 Maro~            1            1           20            2           11
+##  7 Sout~            1            0           33            2           13
+##  8 Sout~           12            2          110           13          100
+##  9 Bond~            3            1            2            1            6
+## 10 Bron~            4            2           38            3           25
+## 11 Tama~            1            0            7           22           23
+## # ... with 339 more variables: `05/02/2013` <dbl>, `11/02/2013` <dbl>,
 ## #   `23/02/2013` <dbl>, `07/03/2013` <dbl>, `25/03/2013` <dbl>,
 ## #   `02/04/2013` <dbl>, `12/04/2013` <dbl>, `18/04/2013` <dbl>,
 ## #   `24/04/2013` <dbl>, `01/05/2013` <dbl>, `20/05/2013` <dbl>,
@@ -222,7 +225,7 @@ sydneybeaches_wide
 ## #   `29/03/2014` <dbl>, `22/04/2014` <dbl>, `14/04/2014` <dbl>,
 ## #   `30/04/2014` <dbl>, `12/05/2014` <dbl>, `28/05/2014` <dbl>,
 ## #   `03/06/2014` <dbl>, `19/06/2014` <dbl>, `03/07/2014` <dbl>,
-## #   `18/07/2014` <dbl>, `01/08/2014` <dbl>, …
+## #   `18/07/2014` <dbl>, `01/08/2014` <dbl>, ...
 ```
 
 5. Pivot the data back so that the dates are data and not column names.
@@ -248,7 +251,7 @@ sydneybeaches_wide %>%
 ##  8 Clovelly Beach 23/02/2013                    97
 ##  9 Clovelly Beach 07/03/2013                     3
 ## 10 Clovelly Beach 25/03/2013                     0
-## # … with 3,774 more rows
+## # ... with 3,774 more rows
 ```
 
 6. We haven't dealt much with dates yet, but separate the date into columns day, month, and year. Do this on the `sydneybeaches_long` data.
@@ -273,7 +276,7 @@ sydneybeaches_long
 ##  8 Clovelly Beach 23    02    2013                     97
 ##  9 Clovelly Beach 07    03    2013                      3
 ## 10 Clovelly Beach 25    03    2013                      0
-## # … with 3,680 more rows
+## # ... with 3,680 more rows
 ```
 
 7. What is the average `enterococci_cfu_100ml` by year for each beach. Think about which data you will use- long or wide.
@@ -285,7 +288,7 @@ avg_enterococci <- sydneybeaches_long %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'year' (override with `.groups` argument)
+## `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.
 ```
 
 ```r
@@ -307,7 +310,7 @@ avg_enterococci
 ##  8 2013  Maroubra Beach                              47.1 
 ##  9 2013  South Maroubra Beach                        39.3 
 ## 10 2013  South Maroubra Rockpool                     96.4 
-## # … with 56 more rows
+## # ... with 56 more rows
 ```
 
 8. Make the output from question 7 easier to read by pivoting it to wide format.
@@ -329,7 +332,7 @@ avg_enterococci %>%
 ## 4 2016           19.4           61.3            11.3            59.5
 ## 5 2017           13.2           16.8             7.93           20.7
 ## 6 2018           22.9           43.4            10.6            21.6
-## # … with 7 more variables: `Gordons Bay (East)` <dbl>, `Little Bay
+## # ... with 7 more variables: `Gordons Bay (East)` <dbl>, `Little Bay
 ## #   Beach` <dbl>, `Malabar Beach` <dbl>, `Maroubra Beach` <dbl>, `South
 ## #   Maroubra Beach` <dbl>, `South Maroubra Rockpool` <dbl>, `Tamarama
 ## #   Beach` <dbl>

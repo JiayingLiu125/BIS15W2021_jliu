@@ -55,9 +55,12 @@ The quotes show the folder structure from the root directory.
 sydneybeaches <-read_csv(here("lab8", "data", "sydneybeaches.csv")) %>% janitor::clean_names()
 ```
 
+
 2. Are these data "tidy" per the definitions of the tidyverse? How do you know? Are they in wide or long format?
 
 These data are not tidy. The variables within the "date" column are not held in their own columns and the values do not have their own cells. Specifically, the variables day, month and year are all represented in the same cells. They are in long format.
+
+
 
 3. We are only interested in the variables site, date, and enterococci_cfu_100ml. Make a new object focused on these variables only. Name the object `sydneybeaches_long`
 ```{r}
