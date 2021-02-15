@@ -1,7 +1,7 @@
 ---
 title: "Lab 10 Homework"
 author: "Jiaying Liu"
-date: "2021-02-11"
+date: "2021-02-14"
 output:
   html_document: 
     theme: spacelab
@@ -33,7 +33,7 @@ deserts <- read_csv(here("lab10", "data", "surveys_complete.csv"))
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   record_id = col_double(),
 ##   month = col_double(),
@@ -58,7 +58,7 @@ str(deserts)
 ```
 
 ```
-## tibble [34,786 × 13] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+## tibble [34,786 x 13] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ record_id      : num [1:34786] 1 2 3 4 5 6 7 8 9 10 ...
 ##  $ month          : num [1:34786] 7 7 7 7 7 7 7 7 7 7 ...
 ##  $ day            : num [1:34786] 16 16 16 16 16 16 16 16 16 16 ...
@@ -334,10 +334,6 @@ deserts %>%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 40 x 2
 ##    species      avg_weight
 ##    <chr>             <dbl>
@@ -351,7 +347,7 @@ deserts %>%
 ##  8 merriami           43.2
 ##  9 baileyi            31.7
 ## 10 leucogaster        31.6
-## # … with 30 more rows
+## # ... with 30 more rows
 ```
 On average, albigula and spectabilis have the highest weight.
 
@@ -375,7 +371,7 @@ deserts
 ##  8         8     7    16  1977       1 DM         M                  37     NA
 ##  9         9     7    16  1977       1 DM         F                  34     NA
 ## 10        10     7    16  1977       6 PF         F                  20     NA
-## # … with 34,776 more rows, and 5 more variables: genus <chr>, species <chr>,
+## # ... with 34,776 more rows, and 5 more variables: genus <chr>, species <chr>,
 ## #   taxa <chr>, plot_type <chr>, weight_hindfoot_ratio <dbl>
 ```
 
