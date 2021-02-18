@@ -1,7 +1,7 @@
 ---
 title: "Lab 11 Homework"
 author: "Jiaying Liu"
-date: "2021-02-16"
+date: "2021-02-17"
 output:
   html_document: 
     theme: spacelab
@@ -48,7 +48,7 @@ str(gapminder)
 ```
 
 ```
-## tibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)
+## tibble [1,704 x 6] (S3: tbl_df/tbl/data.frame)
 ##  $ country  : Factor w/ 142 levels "Afghanistan",..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ continent: Factor w/ 5 levels "Africa","Americas",..: 3 3 3 3 3 3 3 3 3 3 ...
 ##  $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
@@ -102,20 +102,13 @@ anyNA(gapminder)
 global_life_exp <- gapminder %>%
   group_by(year) %>%
   summarise(mean_life_exp = mean(lifeExp))
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```r
 global_life_exp
 ```
 
 ```
 ## # A tibble: 12 x 2
 ##     year mean_life_exp
-##    <int>         <dbl>
+##  * <int>         <dbl>
 ##  1  1952          49.1
 ##  2  1957          51.5
 ##  3  1962          53.6
@@ -174,7 +167,7 @@ gapminder_summary <- gapminder %>%
 ```
 
 ```
-## `summarise()` regrouping output by 'year' (override with `.groups` argument)
+## `summarise()` has grouped output by 'year'. You can override using the `.groups` argument.
 ```
 
 ```r
@@ -196,7 +189,7 @@ gapminder_summary
 ##  8 1957  Asia              30.3          49.3         67.8
 ##  9 1957  Europe            48.1          66.7         73.5
 ## 10 1957  Oceania           70.3          70.3         70.3
-## # … with 50 more rows
+## # ... with 50 more rows
 ```
 
 
@@ -306,7 +299,7 @@ gapminder_diff
 ##  8 Angola      Africa    2007     42.7 12420476     4797.    8188381
 ##  9 Argentina   Americas  1952     62.5 17876956     5911.          0
 ## 10 Argentina   Americas  2007     75.3 40301927    12779.   22424971
-## # … with 274 more rows
+## # ... with 274 more rows
 ```
 
 
@@ -330,7 +323,7 @@ gapminder_diff %>%
 ##  8 Nigeria       Africa    2007     46.9  135031164     2014.  101912068
 ##  9 Mexico        Americas  2007     76.2  108700891    11978.   78556574
 ## 10 Philippines   Asia      2007     71.7   91077287     3190.   68638596
-## # … with 274 more rows
+## # ... with 274 more rows
 ```
 
 **8. Use your results from the question above to plot population growth for the top five countries since 1952.**
