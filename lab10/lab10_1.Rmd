@@ -109,17 +109,24 @@ elephants <- read_csv(here("lab10", "data", "ElephantsMF.csv")) %>% clean_names(
 
 1. On midterm 1, I asked how many male and female elephants were represented in the data. How would you make a plot of this?
 ```{r}
-
+elephants %>%
+  ggplot(aes(x = sex))+
+  geom_bar()
 ```
 
 2. How does the age of elephants compare by sex?
 ```{r}
-
+elephants %>%
+  ggplot(aes(x = sex, y = age))+
+  geom_boxplot()
 ```
 
 3. What is the relationship between age and height?
 ```{r}
-
+elephants%>%
+  ggplot(aes(x = age, y = height))+
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE)
 ```
 
 ## Aesthetics: Labels
@@ -197,12 +204,25 @@ names(homerange)
 
 1. Make a barplot that shows counts of ectotherms and endotherms. Label the axes, provide a title, and fill by `thermoregulation`.
 ```{r}
-
+homerange %>%
+  ggplot(aes(x = thermoregulation, fill = thermoregulation))+
+  geom_bar()+
+  labs(title = "# Taxa by Thermoregulation Type",
+       x = "Thermoregulation",
+       y = "n") + 
+  theme(plot.title = element_text(size = rel(1.5), hjust = 0.5))
+  
 ```
 
 2. Make a scatterplot that compares log10.mass and homerange. Adjust the size of points by mass. Label the axes and provide a title.
 ```{r}
-
+homerange %>%
+  ggplot(aes(x = log10.mass,  y = log10.hra))+
+  geom_point(size = 1)+
+  labs(title = "Mass vs. Homerange",
+       x = "log10.mass",
+       y = "log10.hra") + 
+  theme(plot.title = element_text(size = rel(1.5), hjust = 0.5))
 ```
 
 ## That's it! Take a break and I will see you on Zoom!  
