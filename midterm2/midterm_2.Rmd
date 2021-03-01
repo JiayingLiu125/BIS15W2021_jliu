@@ -272,3 +272,11 @@ gapminder_join %>%
        y= "log10 of GDP")
 ```
 In the five countries with biggest population growth, the life expectancy and GDP shows a positive correlation in the past 100 years, implying that the life expectancy might be extended when people lived under better economic situations.
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+# Missing .md file.
+</div>
