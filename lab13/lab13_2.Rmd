@@ -25,6 +25,9 @@ knitr::opts_chunk$set(
 
 ## Group project  
 We will meet in our groups today to compare the data sets that we found. You should try to pick the data set that you think will be most appropriate; i.e. does it have a mix of variables, does it have a story to tell? Once you have a data set, think about the kinds of questions you might ask. Remember, in the end you will need to deliver a 5-6 minute presentation of your work. If you need help, please ask!
+```{r}
+#install.packages("shiny")
+```
 
 ## Load the Libraries  
 ```{r}
