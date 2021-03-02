@@ -1,7 +1,7 @@
 ---
 title: "Lab 12 Homework"
 author: "Jiaying Liu"
-date: "2021-02-25"
+date: "2021-03-01"
 output:
   html_document: 
     theme: spacelab
@@ -49,7 +49,7 @@ grizzly <- readr::read_csv("data/bear-sightings.csv")
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   bear.id = col_double(),
 ##   longitude = col_double(),
@@ -63,7 +63,7 @@ str(grizzly)
 ```
 
 ```
-## tibble [494 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+## spec_tbl_df [494 x 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ bear.id  : num [1:494] 7 57 69 75 104 108 115 116 125 135 ...
 ##  $ longitude: num [1:494] -149 -153 -145 -153 -143 ...
 ##  $ latitude : num [1:494] 62.7 58.4 62.4 59.9 61.1 ...
@@ -218,7 +218,7 @@ wolves <- readr::read_csv("data/wolves_data/wolves_dataset.csv")
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   .default = col_double(),
 ##   pop = col_character(),
@@ -226,7 +226,7 @@ wolves <- readr::read_csv("data/wolves_data/wolves_dataset.csv")
 ##   sex = col_character(),
 ##   color = col_character()
 ## )
-## ℹ Use `spec()` for the full column specifications.
+## i Use `spec()` for the full column specifications.
 ```
 
 
@@ -235,7 +235,7 @@ str(wolves)
 ```
 
 ```
-## tibble [1,986 × 23] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+## spec_tbl_df [1,986 x 23] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
 ##  $ pop               : chr [1:1986] "AK.PEN" "AK.PEN" "AK.PEN" "AK.PEN" ...
 ##  $ year              : num [1:1986] 2006 2006 2006 2006 2006 ...
 ##  $ age.cat           : chr [1:1986] "S" "S" "A" "S" ...
@@ -320,7 +320,7 @@ wolves_lower_48
 ##  8 GTNP   2013 P       M     G      43.8 -111.  10375. 3924.        34.0
 ##  9 GTNP   2013 P       M     G      43.8 -111.  10375. 3924.        34.0
 ## 10 GTNP   2013 P       F     G      43.8 -111.  10375. 3924.        34.0
-## # … with 1,159 more rows, and 13 more variables: pack.size <dbl>,
+## # ... with 1,159 more rows, and 13 more variables: pack.size <dbl>,
 ## #   standard.habitat <dbl>, standard.human <dbl>, standard.pop <dbl>,
 ## #   standard.packsize <dbl>, standard.latitude <dbl>, standard.longitude <dbl>,
 ## #   cav.binary <dbl>, cdv.binary <dbl>, cpv.binary <dbl>, chv.binary <dbl>,
