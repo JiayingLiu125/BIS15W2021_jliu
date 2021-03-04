@@ -1,6 +1,6 @@
 ---
 title: "Midterm 2"
-author: "Please Add Your Name Here"
+author: "Jiaying Liu"
 date: "2021-02-28"
 output:
   html_document: 
